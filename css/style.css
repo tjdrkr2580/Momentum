@@ -25,6 +25,10 @@ button {
     line-height: 18px;
 }
 
+button:active {
+    transform: scale(0.89);
+}
+
 .momentum_layout {
     width: 100%;
     position: absolute;
@@ -62,3 +66,9 @@ button {
 .todo_input:focus {
     outline: none;
 }
+
+.todo {
+    margin-top: 20px;
+}
+
+

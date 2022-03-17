@@ -4,6 +4,7 @@ const form = document.querySelector("form");
 const timeText = document.querySelector(".time_text");
 
 const todoArray = [];
+localStorage.setItem("todos",JSON.stringify(todoArray));
 
 setInterval(function () {
     let timer = new Date();
@@ -78,6 +79,11 @@ function submitTodo(e) {
     todoinput.value = "";
     todoArray.push(li);
     li.appendChild(button);
+    function deleteTodo(e) {
+        li.remove(e.target.parentElement);
+    }
+    button.addEventListener("click", deleteTodo);
+    console.log(localStorage.getItem("todos"));
 }
 
 form.addEventListener("submit", submitTodo);
