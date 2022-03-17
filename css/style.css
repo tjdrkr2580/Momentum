@@ -18,6 +18,13 @@ a {
     cursor: pointer;
 }
 
+button {
+    margin-left: 8px;
+    border: none;
+    border-radius: 50%;
+    line-height: 18px;
+}
+
 .momentum_layout {
     width: 100%;
     position: absolute;

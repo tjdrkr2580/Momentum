@@ -71,10 +71,13 @@ function submitTodo(e) {
     e.preventDefault();
     const ul = document.querySelector(".todo");
     const li = document.createElement("li");
+    const button = document.createElement("button");
+    button.innerText = "❌";
     ul.appendChild(li);
     li.innerText = todoinput.value;
     todoinput.value = "";
     todoArray.push(li);
+    li.appendChild(button);
 }
 
 form.addEventListener("submit", submitTodo);
