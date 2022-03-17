@@ -3,14 +3,15 @@ const todoinput = document.querySelector(".todo_input");
 const form = document.querySelector("form");
 const timeText = document.querySelector(".time_text");
 
+const todoArray = [];
 
-setInterval(function(){
+setInterval(function () {
     let timer = new Date();
-    let h = String(timer.getHours()).padStart(2,"0");
+    let h = String(timer.getHours()).padStart(2, "0");
     switch (h) {
         case "6":
             timeText.innerText = "Good morning , user";
-            break
+            break;
         case "7":
             timeText.innerText = "Good morning , user";
             break;
@@ -22,10 +23,10 @@ setInterval(function(){
             break;
         case "10":
             timeText.innerText = "Good morning , user";
-            break
+            break;
         case "11":
             timeText.innerText = "Good morning , user";
-            breakm
+            break;
         case "12":
             timeText.innerText = "Good morning , user";
             break;
@@ -60,15 +61,20 @@ setInterval(function(){
         default:
             timeText.innerText = "Good night , user";
             break;
- }
-    let m = String(timer.getMinutes()).padStart(2,"0");
-    let s = String(timer.getSeconds()).padStart(2,"0");
+    }
+    let m = String(timer.getMinutes()).padStart(2, "0");
+    let s = String(timer.getSeconds()).padStart(2, "0");
     clock.innerText = `${h}:${m}:${s}`;
-},1000);
+}, 1000);
 
-function submitTodo(e){
-   e.preventDefault(); 
+function submitTodo(e) {
+    e.preventDefault();
+    const ul = document.querySelector(".todo");
+    const li = document.createElement("li");
+    ul.appendChild(li);
+    li.innerText = todoinput.value;
+    todoinput.value = "";
+    todoArray.push(li);
 }
 
-
-form.addEventListener("submit",submitTodo);
+form.addEventListener("submit", submitTodo);
