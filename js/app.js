@@ -4,7 +4,11 @@ const form = document.querySelector("form");
 const timeText = document.querySelector(".time_text");
 
 const todoArray = [];
-localStorage.setItem("todos",JSON.stringify(todoArray));
+let todoinput_in = 0;
+const newObj = {
+    text: todoinput_in,
+    id: Date.now(),
+}
 
 setInterval(function () {
     let timer = new Date();
@@ -73,17 +77,30 @@ function submitTodo(e) {
     const ul = document.querySelector(".todo");
     const li = document.createElement("li");
     const button = document.createElement("button");
+
     button.innerText = "❌";
     ul.appendChild(li);
-    li.innerText = todoinput.value;
+    todoinput_in = todoinput.value;
+    li.innerText = todoinput_in;
     todoinput.value = "";
-    todoArray.push(li);
+    
+    todoArray.push(li.innerText);
+    console.log(todoinput_in);
+    localStorage.setItem("todos", JSON.stringify(newObj));
+
     li.appendChild(button);
     function deleteTodo(e) {
         li.remove(e.target.parentElement);
     }
+
     button.addEventListener("click", deleteTodo);
-    console.log(localStorage.getItem("todos"));
+    console.log(newObj.text);
+}
+
+
+
+function saveTodoLocalstorage(){
+
 }
 
 form.addEventListener("submit", submitTodo);
