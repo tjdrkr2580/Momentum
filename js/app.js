@@ -85,6 +85,7 @@ function submitTodo(e) {
         text: todoinput_in,
         id: Date.now(),
     }
+    
     todoArray.push(newObj);
     saveTodoLocalstorage();
     
