@@ -65,8 +65,7 @@ setInterval(function () {
             break;
     }
     let m = String(timer.getMinutes()).padStart(2, "0");
-    let s = String(timer.getSeconds()).padStart(2, "0");
-    clock.innerText = `${h}:${m}:${s}`;
+    clock.innerText = `${h}:${m}`;
 }, 1000);
 
 function submitTodo(e) {
