@@ -33,6 +33,7 @@ span:hover {
 }
 
 button {
+    cursor: pointer;
     background: transparent;
     color: black;
     font-size: 18px;
@@ -51,6 +52,10 @@ footer {
     bottom: 15px;
 }
 
+.momentum_header {
+    margin: 12px 10px;
+}
+
 
 .momentum_layout {
     width: 100%;
@@ -61,6 +66,18 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.header {
+    border-left: 0;
+    border-bottom: 1px solid white;
+    border-top: 0;
+    border-right: 0;
+    background: transparent;
+}
+
+.header:focus {
+    outline: none;
 }
 
 .clock {
@@ -119,5 +136,6 @@ footer {
 .under i:active {
     transform: scale(0.89);
 }
+
 
 

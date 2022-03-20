@@ -3,7 +3,7 @@ const todoinput = document.querySelector(".todo_input");
 const form = document.querySelector("form");
 const timeText = document.querySelector(".time_text");
 
-const todoArray = [];
+let todoArray = [];
 let todo_input_in = 0;
 
 
@@ -73,6 +73,7 @@ function submitTodo(e) {
     const ul = document.querySelector(".todo");
     const li = document.createElement("li");
     const button = document.createElement("button");
+    const todoSave = localStorage.getItem("todos");
 
     button.innerText = "X";
     ul.appendChild(li);
@@ -80,22 +81,18 @@ function submitTodo(e) {
     li.innerText = todoinput_in;
     todoinput.value = "";
 
-    const newObj = { 
-        text: todoinput_in,
-        id: Date.now(),
-    }
     
     todoArray.push(newObj);
-    saveTodoLocalstorage();
-    
-    
+    li.className = newObj.id;
     li.appendChild(button);
+
     function deleteTodo(e) {
         li.remove(e.target.parentElement);
+        todoArray = todoArray.filter(toDo => toDo.id !== parseInt(newObj.id));   
+        saveTodoLocalstorage();
     }
 
     button.addEventListener("click", deleteTodo);
-    console.log(newObj.text);
     saveTodoLocalstorage();
 }
 
@@ -103,5 +100,6 @@ function submitTodo(e) {
 function saveTodoLocalstorage(){
     localStorage.setItem("todos", JSON.stringify(todoArray));
 }
+
 
 form.addEventListener("submit", submitTodo);
