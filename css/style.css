@@ -33,12 +33,12 @@ span:hover {
 }
 
 button {
+    background: transparent;
     color: black;
     font-size: 18px;
     border: none;
     margin-left: 8px;
     border-radius: 50%;
-    line-height: px;
 }
 
 button:active {
