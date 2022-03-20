@@ -81,6 +81,10 @@ function submitTodo(e) {
     li.innerText = todoinput_in;
     todoinput.value = "";
 
+    const newObj = { 
+        text: todoinput_in,
+        id: Date.now(),
+    }
     
     todoArray.push(newObj);
     li.className = newObj.id;
@@ -101,5 +105,8 @@ function saveTodoLocalstorage(){
     localStorage.setItem("todos", JSON.stringify(todoArray));
 }
 
+function saveTodo(){
+    
+}
 
 form.addEventListener("submit", submitTodo);
