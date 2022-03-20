@@ -11,12 +11,13 @@ body {
 
 body > img {
     background-attachment: fixed;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 li {
     list-style: none;
@@ -25,7 +26,6 @@ li {
 
 span {
     cursor: pointer;
-
 }
 
 span:hover {
@@ -33,15 +33,24 @@ span:hover {
 }
 
 button {
-    margin-left: 8px;
+    color: black;
+    font-size: 18px;
     border: none;
+    margin-left: 8px;
     border-radius: 50%;
-    line-height: 18px;
+    line-height: px;
 }
 
 button:active {
     transform: scale(0.89);
 }
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 15px;
+}
+
 
 .momentum_layout {
     width: 100%;
@@ -87,3 +96,28 @@ button:active {
 .todo {
     margin-top: 20px;
 }
+
+.under {
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.under i {
+    position: absolute;
+    left: 15px;
+}
+
+.under i:hover {
+    cursor: pointer;
+}
+
+.under i:active {
+    transform: scale(0.89);
+}
+
+

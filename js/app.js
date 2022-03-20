@@ -74,7 +74,7 @@ function submitTodo(e) {
     const li = document.createElement("li");
     const button = document.createElement("button");
 
-    button.innerText = "❌";
+    button.innerText = "X";
     ul.appendChild(li);
     todoinput_in = todoinput.value;
     li.innerText = todoinput_in;
